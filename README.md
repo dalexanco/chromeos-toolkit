@@ -35,7 +35,21 @@ Then patch the default port in `/etc/cups/cupsd.conf` :
 Port 6631
 ... 
 ```
-   73  sudo service cups restart
+Restart the CUPS service
+```
+sudo service cups restart
+```
+Add a password to your current user
+```
+sudo passwd $USER
+```
+From Chrome on ChromeOS, go to http://localhost:6631/admin (connect yourself using your linux user/passwd)
+
+- Setup a new printer (specific to Brother : select Generic / Generic PostScript printer).
+- Name your printer with "_CUPS" suffix to identify it later
+
+Then in ChromeOS go to Settings>Printers>Add printer>Server and enter the CUPS server address : http://localhost:6631
+You should see your <printer>_CUPS in the available devices now
 
 ### 
 Setup port forwarding on ChromeOS settings (Settings>Developer>Port-forwarding) :
