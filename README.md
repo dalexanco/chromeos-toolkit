@@ -13,12 +13,19 @@ Run `install.sh` to download and install all dependencies.
 
 - Create symbolic link for scripts from `bin` to `/usr/local/bin` :
 ```
-$ sudo ln -s $PWD/bin/launch-printer-daemon.sh /usr/local/bin
+sudo ln -s $PWD/bin/launch-printer-daemon.sh /usr/local/bin
 ```
 - To make scripts available from ChromeOS, copy all desktop files from `application` to `/usr/share/applications`.
 ```
-$ sudo ln -s $PWD/applications/launch-printer-daemon.desktop /usr/share/applications
+sudo ln -s $PWD/applications/launch-printer-daemon.desktop /usr/share/applications
+sudo ln -s $PWD/applications/launch-scanner.desktop /usr/share/applications
 ```
+- To change the default script icon
+```
+sudo ln -s $PWD/icons/launch-printer-daemon.png /usr/share/icons/launch-printer-daemon.png
+sudo ln -s $PWD/icons/launch-scanner.png /usr/share/icons/launch-scanner.png
+```
+
 ## Setup CUPS with ChromeOS
 
 Necessary to access to CUPS admin from ChromeOS and setup a new printer.
@@ -54,3 +61,8 @@ You should see your <printer>_CUPS in the available devices now
 ### 
 Setup port forwarding on ChromeOS settings (Settings>Developer>Port-forwarding) :
 - CUPS on port **6631**
+
+
+# Legal notice
+
+Icons from [Tissu icônes créées par Those Icons - Flaticon](https://www.flaticon.com/fr/icones-gratuites/tissu)
